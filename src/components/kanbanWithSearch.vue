@@ -104,7 +104,7 @@ async function fetchGitHubRepos(username) {
     }
 
   } catch (error) {
-    console.error('Erro ao buscar repositórios:', error);
+    console.error('Erro ao buscar repositórios:', error.response.data);
   }
 }
 
