@@ -56,7 +56,7 @@ const searchQuery = ref('');
 const selectedTags = ref([]);
 const showFilterMenu = ref(false);
 const originalSections = ref([]);
-const token = import.meta.env.GITHUB_TOKEN;
+const token = import.meta.env.VITE_GITHUB_TOKEN;
 
 // Função para buscar os repositórios do GitHub
 async function fetchGitHubRepos(username) {
