@@ -5,11 +5,15 @@
     </button>
 
     <nav :class="{ 'is-active': menuOpen }">
-      <img src="../assets/github-mark-white.svg" alt="Logo do site" class="logo" />
+      <img
+        src="../assets/github-mark-white.svg"
+        alt="Logo do site"
+        class="logo"
+      />
 
       <ul>
         <li v-for="item in items" :key="item.id">
-          <a href="#" :class="item.class">
+          <a :href="item.link" :class="item.class" :target="item.target">
             <ion-icon :name="item.icon"></ion-icon>
             {{ item.name }}
           </a>
@@ -20,7 +24,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const menuOpen = ref(false);
 const toggleMenu = () => {
@@ -30,30 +34,25 @@ const toggleMenu = () => {
 const items = ref([
   {
     id: 1,
-    name: 'Pagina Inicial',
-    icon: 'home',
-    link: '#',
-    class: 'active'
+    name: "Pagina Inicial",
+    icon: "home",
+    link: "#",
+    class: "active",
   },
   {
     id: 2,
-    name: 'Github',
-    icon: 'logo-github',
-    link: '#'
+    name: "Github",
+    icon: "logo-github",
+    link: "https://github.com/matheuswesley",
+    target: "_blank",
   },
   {
     id: 3,
-    name: 'Instagram',
-    icon: 'logo-instagram',
-    link: '#'
+    name: "Linkedin",
+    icon: "logo-linkedin",
+    link: "https://www.linkedin.com/in/mathwesley/",
   },
-  {
-    id: 4,
-    name: 'YouTube',
-    icon: 'logo-youtube',
-    link: '#'
-  }
-])
+]);
 </script>
 
 <style scoped>
@@ -99,7 +98,6 @@ a ion-icon {
 
 /* Estilos para mobile */
 @media (max-width: 768px) {
-
   /* Botão de menu para mobile */
   .menu-toggle {
     display: inline;
@@ -112,7 +110,6 @@ a ion-icon {
     font-size: 2.5rem;
     z-index: 10;
   }
-
 
   nav {
     position: fixed;
